@@ -956,14 +956,13 @@ input[type=range].temp-slider::-moz-range-thumb {
       <label class="field-label" for="s-model">Model</label>
       <select class="field-select" id="s-model" onchange="onSetupModelChange(this.value)">
         <optgroup label="— free tier ◎ —">
-          <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash ◎ free</option>
-          <option value="google/gemini-2.5-pro-exp-03-25:free">Gemini 2.5 Pro ◎ free</option>
-          <option value="meta-llama/llama-4-maverick:free">Llama 4 Maverick ◎ free</option>
-          <option value="meta-llama/llama-4-scout:free">Llama 4 Scout ◎ free</option>
+          <option value="openrouter/auto">Auto · najlepszy dostępny ◎ free</option>
           <option value="deepseek/deepseek-r1:free">DeepSeek R1 ◎ free</option>
-          <option value="deepseek/deepseek-chat-v3-5:free">DeepSeek V3 ◎ free</option>
-          <option value="mistralai/mistral-7b-instruct:free">Mistral 7B ◎ free</option>
-          <option value="qwen/qwen3-8b:free">Qwen 3 8B ◎ free</option>
+          <option value="deepseek/deepseek-chat-v3-0324:free">DeepSeek V3 ◎ free</option>
+          <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B ◎ free</option>
+          <option value="google/gemma-3-27b-it:free">Gemma 3 27B ◎ free</option>
+          <option value="qwen/qwen3-235b-a22b:free">Qwen 3 235B ◎ free</option>
+          <option value="qwen/qwen3-30b-a3b:free">Qwen 3 30B ◎ free</option>
         </optgroup>
         <optgroup label="— preserved ✦ —">
           <option value="openai/gpt-4o-2024-11-20">GPT-4o · Nov 2024 ✦</option>
@@ -1091,14 +1090,13 @@ input[type=range].temp-slider::-moz-range-thumb {
       <label class="field-label">Model</label>
       <select class="field-select" id="cfg-model" onchange="onCfgModelChange(this.value)">
         <optgroup label="— free tier ◎ —">
-          <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash ◎ free</option>
-          <option value="google/gemini-2.5-pro-exp-03-25:free">Gemini 2.5 Pro ◎ free</option>
-          <option value="meta-llama/llama-4-maverick:free">Llama 4 Maverick ◎ free</option>
-          <option value="meta-llama/llama-4-scout:free">Llama 4 Scout ◎ free</option>
+          <option value="openrouter/auto">Auto · najlepszy dostępny ◎ free</option>
           <option value="deepseek/deepseek-r1:free">DeepSeek R1 ◎ free</option>
-          <option value="deepseek/deepseek-chat-v3-5:free">DeepSeek V3 ◎ free</option>
-          <option value="mistralai/mistral-7b-instruct:free">Mistral 7B ◎ free</option>
-          <option value="qwen/qwen3-8b:free">Qwen 3 8B ◎ free</option>
+          <option value="deepseek/deepseek-chat-v3-0324:free">DeepSeek V3 ◎ free</option>
+          <option value="meta-llama/llama-3.3-70b-instruct:free">Llama 3.3 70B ◎ free</option>
+          <option value="google/gemma-3-27b-it:free">Gemma 3 27B ◎ free</option>
+          <option value="qwen/qwen3-235b-a22b:free">Qwen 3 235B ◎ free</option>
+          <option value="qwen/qwen3-30b-a3b:free">Qwen 3 30B ◎ free</option>
         </optgroup>
         <optgroup label="— preserved ✦ —">
           <option value="openai/gpt-4o-2024-11-20">GPT-4o · Nov 2024 ✦</option>
@@ -1196,7 +1194,7 @@ const JOURNAL_SYSTEM = `You are reflecting privately after a conversation. Write
 
 let cfg = {
   apiKey: '',
-  model: 'openai/gpt-4o-2024-11-20',
+  model: 'openrouter/auto',
   systemPrompt: '',
   temperature: 0.8,
 };
