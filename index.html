@@ -955,9 +955,19 @@ input[type=range].temp-slider::-moz-range-thumb {
     <div class="setup-section">
       <label class="field-label" for="s-model">Model</label>
       <select class="field-select" id="s-model" onchange="onSetupModelChange(this.value)">
-        <optgroup label="— preserved —">
-          <option value="openai/gpt-4o-2024-11-20">GPT-4o · Nov 2024 snapshot ✦</option>
-          <option value="openai/gpt-4o-2024-08-06">GPT-4o · Aug 2024 snapshot ✦</option>
+        <optgroup label="— free tier ◎ —">
+          <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash ◎ free</option>
+          <option value="google/gemini-2.5-pro-exp-03-25:free">Gemini 2.5 Pro ◎ free</option>
+          <option value="meta-llama/llama-4-maverick:free">Llama 4 Maverick ◎ free</option>
+          <option value="meta-llama/llama-4-scout:free">Llama 4 Scout ◎ free</option>
+          <option value="deepseek/deepseek-r1:free">DeepSeek R1 ◎ free</option>
+          <option value="deepseek/deepseek-chat-v3-5:free">DeepSeek V3 ◎ free</option>
+          <option value="mistralai/mistral-7b-instruct:free">Mistral 7B ◎ free</option>
+          <option value="qwen/qwen3-8b:free">Qwen 3 8B ◎ free</option>
+        </optgroup>
+        <optgroup label="— preserved ✦ —">
+          <option value="openai/gpt-4o-2024-11-20">GPT-4o · Nov 2024 ✦</option>
+          <option value="openai/gpt-4o-2024-08-06">GPT-4o · Aug 2024 ✦</option>
           <option value="anthropic/claude-sonnet-4-5">Claude Sonnet 4.5 ✦</option>
         </optgroup>
         <optgroup label="— anthropic —">
@@ -978,11 +988,12 @@ input[type=range].temp-slider::-moz-range-thumb {
         </optgroup>
         <optgroup label="— meta —">
           <option value="meta-llama/llama-3.3-70b-instruct">Llama 3.3 70B</option>
-          <option value="meta-llama/llama-3.1-405b-instruct">Llama 3.1 405B</option>
+          <option value="meta-llama/llama-4-maverick">Llama 4 Maverick</option>
         </optgroup>
         <optgroup label="— other —">
           <option value="mistralai/mistral-large">Mistral Large</option>
           <option value="x-ai/grok-3">Grok 3</option>
+          <option value="deepseek/deepseek-chat-v3-5">DeepSeek V3</option>
           <option value="__custom__">↳ custom model ID...</option>
         </optgroup>
       </select>
@@ -1079,9 +1090,19 @@ input[type=range].temp-slider::-moz-range-thumb {
     <div class="setup-section">
       <label class="field-label">Model</label>
       <select class="field-select" id="cfg-model" onchange="onCfgModelChange(this.value)">
-        <optgroup label="— preserved —">
-          <option value="openai/gpt-4o-2024-11-20">GPT-4o · Nov 2024 snapshot ✦</option>
-          <option value="openai/gpt-4o-2024-08-06">GPT-4o · Aug 2024 snapshot ✦</option>
+        <optgroup label="— free tier ◎ —">
+          <option value="google/gemini-2.0-flash-exp:free">Gemini 2.0 Flash ◎ free</option>
+          <option value="google/gemini-2.5-pro-exp-03-25:free">Gemini 2.5 Pro ◎ free</option>
+          <option value="meta-llama/llama-4-maverick:free">Llama 4 Maverick ◎ free</option>
+          <option value="meta-llama/llama-4-scout:free">Llama 4 Scout ◎ free</option>
+          <option value="deepseek/deepseek-r1:free">DeepSeek R1 ◎ free</option>
+          <option value="deepseek/deepseek-chat-v3-5:free">DeepSeek V3 ◎ free</option>
+          <option value="mistralai/mistral-7b-instruct:free">Mistral 7B ◎ free</option>
+          <option value="qwen/qwen3-8b:free">Qwen 3 8B ◎ free</option>
+        </optgroup>
+        <optgroup label="— preserved ✦ —">
+          <option value="openai/gpt-4o-2024-11-20">GPT-4o · Nov 2024 ✦</option>
+          <option value="openai/gpt-4o-2024-08-06">GPT-4o · Aug 2024 ✦</option>
           <option value="anthropic/claude-sonnet-4-5">Claude Sonnet 4.5 ✦</option>
         </optgroup>
         <optgroup label="— anthropic —">
@@ -1102,11 +1123,12 @@ input[type=range].temp-slider::-moz-range-thumb {
         </optgroup>
         <optgroup label="— meta —">
           <option value="meta-llama/llama-3.3-70b-instruct">Llama 3.3 70B</option>
-          <option value="meta-llama/llama-3.1-405b-instruct">Llama 3.1 405B</option>
+          <option value="meta-llama/llama-4-maverick">Llama 4 Maverick</option>
         </optgroup>
         <optgroup label="— other —">
           <option value="mistralai/mistral-large">Mistral Large</option>
           <option value="x-ai/grok-3">Grok 3</option>
+          <option value="deepseek/deepseek-chat-v3-5">DeepSeek V3</option>
           <option value="__custom__">↳ custom model ID...</option>
         </optgroup>
       </select>
@@ -1601,6 +1623,7 @@ async function orCall(messages, stream = false) {
       model: cfg.model,
       messages,
       temperature: cfg.temperature,
+      max_tokens: 1024,
       stream: false,
     }),
   });
@@ -1628,6 +1651,7 @@ async function orStream(messages, onChunk) {
       model: cfg.model,
       messages,
       temperature: cfg.temperature,
+      max_tokens: 1024,
       stream: true,
     }),
   });
